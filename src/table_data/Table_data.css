@@ -1,0 +1,36 @@
+.ceil-row-table{
+ width:12%   
+}
+.row-table-header{
+    background-color: grey;
+}
+.row-table {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.row-table div{
+    width:12%;
+    text-align: center;
+}
+
+.animation {
+    opacity: 1;
+    animation-name: opacityAnimation;
+    animation-duration: 1s;
+}
+@keyframes opacityAnimation {
+from {
+    opacity: 0;
+}
+to {
+    opacity: 1;
+}
+}
+
+.table-data-data{
+    text-align: center;
+    display: flex;
+    flex-direction: column-reverse;
+}
