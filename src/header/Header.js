@@ -2,7 +2,7 @@ import React,{useCallback,useEffect} from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import {START_GET_DATA,CHANGE_DATE,CHANGE_COUNT_ROW,CHANGE_REFRESH_DATA,CLEAR_ERROR_DATA,PAUSED,CANSEL_PAUSED} from '../constants/actions'
 import moment from 'moment'
-import {Button, DatePicker,InputNumber,Checkbox,notification} from 'antd';
+import {Button, DatePicker,InputNumber,Checkbox,notification,Alert} from 'antd';
 
 import './Header.css';
 
@@ -88,26 +88,38 @@ function Error_messages(){
 
    const error_messages = useSelector((state) => state.errors.error_messages);
     
-   
-    
+   const onCloseHandler = (index) => {
+    dispatch({type:CLEAR_ERROR_DATA,payload:index})
+}
+  /*  
    useEffect(()=>{
  
     if (error_messages.length>0){
-       
-        notification.error({
-            message: 'Notification Title',
-            description:
-              'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
-            onClick: () => {
-              console.log('Notification Clicked!');
-            },
-          });
+
+        error_messages.forEach((error,index) => {
+             notification.error({
+                message: "Ошибка получения данных на дату " + error.date + ", код ошибки: " + error.textError,
+                duration:3,
+                description:
+                  "Ошибка получения данных",
+                  onClose:()=>{onCloseHandler(index)} ,
+              });    
+        });
+
+        
        }
 },)
-    return(<ul>{
-        error_messages.map(error => (<li>{`Ошибка, нет данных за период: `} </li>))
+*/
+    return(<>{
+        error_messages.map((error,index) => (<Alert
+            message={"Ошибка получения данных на дату " + error.date + ", код ошибки: " + error.textError}
+            //description="Ошибка получения данных"
+            type="error"
+            closable
+            onClose={()=>{onCloseHandler(index)}}
+          />))
          }
-    </ul>)
+    </>)
         /*{ error_messages.length>0 && <ul>{error_messages.map((error)=>(<li>{
             message.error("Ошибка, нет данных за период: "+
              error.date.year + 

@@ -21,7 +21,7 @@ export const  errors  =  (
 
 
         case CLEAR_ERROR_DATA:
-          state.error_messages = []
+          state.error_messages.splice(action.payload,1)
         return {
             ...state,
             error_messages: [...state.error_messages]

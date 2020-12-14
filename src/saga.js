@@ -27,8 +27,8 @@ async function getData_onDate(year, month, date) {
 
 
   } catch (error) {
-
-    data.error_message = {date:{year:String(year),month:String(month),date:String(date)},textError:error}
+    const dateString = String(date).padStart(2,"0") +"."+ String(month).padStart(2,"0") +"."+ String(year).padStart(4,"0");  
+    data.error_message = {date:dateString,textError:error}
     
   }
   
@@ -104,6 +104,11 @@ function* getData() {
       limitCountRowTable = yield select((state) => state.filter.countRowTable);
 
       if (countRowTable+counts>limitCountRowTable){
+
+        if (counts===1){
+          yield put({type: "REQUEST_DATA_FINISHED"})
+        }
+
         yield put({
          type: "SUCCESS_GET_DATA",
          payload: {data_arr:[],data_obj:{},loading:false} 
