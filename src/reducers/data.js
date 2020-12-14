@@ -10,25 +10,25 @@ const initialState = {
 export const data = (state = initialState,action)=> {
 
   switch (action.type) {
-       case "START_GET_DATA":
+       case START_GET_DATA:
           return {
               ...state,
               loading: true,
               requestData: true,
           };
 
-      case "REQUEST_DATA":
+      case REQUEST_DATA:
           return {
               ...state,
               requestData: false
           }
-      case "REQUEST_DATA_FINISHED":
+      case REQUEST_DATA_FINISHED:
           return {
               ...state,
               requestData: true
           }
 
-      case "SUCCESS_GET_DATA":
+      case SUCCESS_GET_DATA:
          if (action.payload.data_arr.length){
             state.data_arr.push(action.payload.data_arr[0])
          }

@@ -1,8 +1,8 @@
-import React,{useCallback,useEffect} from "react";
+import React from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import {START_GET_DATA,CHANGE_DATE,CHANGE_COUNT_ROW,CHANGE_REFRESH_DATA,CLEAR_ERROR_DATA,PAUSED,CANSEL_PAUSED} from '../constants/actions'
 import moment from 'moment'
-import {Button, DatePicker,InputNumber,Checkbox,notification,Alert} from 'antd';
+import {Button, DatePicker,InputNumber,Checkbox,Alert} from 'antd';
 
 import './Header.css';
 

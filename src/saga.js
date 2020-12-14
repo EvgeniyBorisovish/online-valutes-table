@@ -78,7 +78,7 @@ function* getData() {
     const data = yield call(getData_onDate, start.getFullYear(),start.getMonth() + 1,start.getDate());
    
     if (data.error_message){  
-      console.log("=======================================")
+    
       yield put({ type: "ERROR_GET_DATA", payload: data.error_message });
 
       start.setDate(start.getDate() + 1
