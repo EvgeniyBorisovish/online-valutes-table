@@ -136,7 +136,7 @@ export default function Header() {
     
     
     return(<>
-            <h1 style={{textAlign:"center"}}>Таблица валют за произволный период:</h1>
+            <h1 style={{textAlign:"center"}}>Таблица валют за произволный периоды:</h1>
             <DatesArrond/>
             <InputsValues/>
             <Error_messages/> 
