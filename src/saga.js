@@ -1,5 +1,5 @@
 import { call, put, takeLatest,take, delay, select, all } from "redux-saga/effects";
-import { REQUEST_DATA_FINISHED,SUCCESS_GET_DATA,START_GET_DATA,ERROR_GET_DATA } from "./constants/actions";
+import { REQUEST_DATA_FINISHED,SUCCESS_GET_DATA,START_GET_DATA,ERROR_GET_DATA,REQUEST_DATA } from "./constants/actions";
 
 import { getData_onDate,getResultData } from "./API/apigetdata";
 
