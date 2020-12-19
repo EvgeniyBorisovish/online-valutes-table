@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import {START_GET_DATA,CHANGE_DATE,CHANGE_COUNT_ROW,CHANGE_REFRESH_DATA,CLEAR_ERROR_DATA,PAUSED,CANSEL_PAUSED} from '../constants/actions'
+import {START_GET_DATA,CHANGE_DATE,CHANGE_COUNT_ROW,CHANGE_REFRESH_DATA,CLEAR_ERROR_DATA,PAUSED,CANSEL_PAUSED} from '../../constants/actions'
 import moment from 'moment'
 import {Button, DatePicker,InputNumber,Checkbox,Alert} from 'antd';
 
@@ -91,25 +91,7 @@ function Error_messages(){
    const onCloseHandler = (index) => {
     dispatch({type:CLEAR_ERROR_DATA,payload:index})
 }
-  /*  
-   useEffect(()=>{
- 
-    if (error_messages.length>0){
 
-        error_messages.forEach((error,index) => {
-             notification.error({
-                message: "Ошибка получения данных на дату " + error.date + ", код ошибки: " + error.textError,
-                duration:3,
-                description:
-                  "Ошибка получения данных",
-                  onClose:()=>{onCloseHandler(index)} ,
-              });    
-        });
-
-        
-       }
-},)
-*/
     return(<>{
         error_messages.map((error,index) => (<Alert
             message={"Ошибка получения данных на дату " + error.date + ", код ошибки: " + error.textError}
@@ -120,15 +102,7 @@ function Error_messages(){
           />))
          }
     </>)
-        /*{ error_messages.length>0 && <ul>{error_messages.map((error)=>(<li>{
-            message.error("Ошибка, нет данных за период: "+
-             error.date.year + 
-             "-" + error.date.month + "-" + 
-             error.date.date + ", error: " + 
-             error.textError )}</li>))
-            }</ul>}*/
-
-    
+     
 }
 
 export default function Header() {
