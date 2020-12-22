@@ -91,9 +91,6 @@ function* getData() {
 
       }
     
-    else {
-      //yield put({ type: "ERROR_GET_DATA", payload: data.error_message });
-    }
     start.setDate(start.getDate() + 1);
   }
 

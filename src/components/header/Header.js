@@ -58,7 +58,6 @@ function InputsValues(){
          <DelayOutData />
         </div>);
 }
-//disabled={loading}
 
 function DelayOutData(){
 
@@ -81,7 +80,6 @@ function DelayOutData(){
     )
 }
 
-
 function Error_messages(){
 
    const dispatch = useDispatch();
@@ -95,7 +93,6 @@ function Error_messages(){
     return(<>{
         error_messages.map((error,index) => (<Alert
             message={"Ошибка получения данных на дату " + error.date + ", код ошибки: " + error.textError}
-            //description="Ошибка получения данных"
             type="error"
             closable
             onClose={()=>{onCloseHandler(index)}}
