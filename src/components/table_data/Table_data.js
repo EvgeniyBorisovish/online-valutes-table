@@ -69,7 +69,7 @@ function Table_data() {
     <div className="table-data-main" style={{overflow: "auto", width:"100%",height:"400px"}}>
         
         <div className="table-data-data">
-          {data_arr.map((id_obj, index) => ( <React.Fragment> <Row_memo id_obj={id_obj} index={index} /></React.Fragment>) )}
+          {data_arr.map((id_obj, index) => ( <Row_memo id_obj={id_obj} index={index} />) )}
         </div>    
 
     </div>
